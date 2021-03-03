@@ -27,7 +27,7 @@ class MyWallet extends StatelessWidget {
           scaffoldBackgroundColor: Colors.transparent,
             primaryColor: Color(0XFF009BFF)),
         debugShowCheckedModeBanner: false,
-        initialRoute: InitialSetScreen.id,
+        initialRoute: LoginScreen.id,
         routes: {
           LoginScreen.id: (context) => LoginScreen(),
           SignUpScreen.id: (context) => SignUpScreen(),
