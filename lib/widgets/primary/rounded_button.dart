@@ -19,6 +19,7 @@ class RoundedButton extends StatelessWidget {
           ]
       ),
       child: MaterialButton(
+        minWidth: double.infinity,
         splashColor: Color(0XFF9DDEFF),
         color: Color(0XFF009BFF),
         shape: StadiumBorder(),

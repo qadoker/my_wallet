@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_wallet/database/wallet_database.dart';
+import 'package:my_wallet/screens/secondary/profile.dart';
+import 'package:my_wallet/screens/secondary/settings.dart';
 import 'package:my_wallet/widgets/secondary/operation_tile.dart';
 import 'package:my_wallet/widgets/secondary/operation_view.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +37,8 @@ class MyWallet extends StatelessWidget {
           Drawing.id: (context) => Drawing(),
           MainScreen.id: (context) => MainScreen(),
           MenuScreen.id: (context) => MenuScreen(),
+          Settings.id: (context) => Settings(),
+          Profile.id: (context) => Profile()
         });
   }
 }

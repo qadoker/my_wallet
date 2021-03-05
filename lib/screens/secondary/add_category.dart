@@ -45,7 +45,6 @@ class _AddCategoryState extends State<AddCategory> {
     return Scaffold(
       backgroundColor: light_blue,
       resizeToAvoidBottomInset: false,
-      resizeToAvoidBottomPadding: true,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: screenWidth * 0.1,

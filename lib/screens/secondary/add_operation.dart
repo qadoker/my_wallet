@@ -47,7 +47,6 @@ class _AddOperationState extends State<AddOperation> {
     return Scaffold(
       backgroundColor: light_blue,
       resizeToAvoidBottomInset: false,
-      resizeToAvoidBottomPadding: true,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: screenWidth*0.1, top: screenHeight*0.1, right: screenWidth*0.1, bottom: MediaQuery.of(context).viewInsets.bottom),

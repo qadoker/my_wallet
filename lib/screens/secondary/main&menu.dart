@@ -27,6 +27,7 @@ class _DrawingState extends State<Drawing> {
 
 class MainScreen extends StatefulWidget {
   static const String id = 'main_screen';
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -40,6 +41,7 @@ class _MainScreenState extends State<MainScreen>
 
   AnimationController _controller;
   Animation<double> _scaleanimation;
+
   // Animation<Offset> _slideanimation;
 
   int _selectedIndex = 1;
@@ -148,11 +150,7 @@ class _MainScreenState extends State<MainScreen>
                   }
                 });
               },
-              child: Stack(
-                children: [
-                  screens[_selectedIndex],
-                ],
-              ),
+              child: screens[_selectedIndex],
             ),
           ),
         ),
