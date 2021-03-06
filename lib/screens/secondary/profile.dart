@@ -83,7 +83,7 @@ class _ProfileState extends State<Profile> {
                             onPressed: (){
                               Navigator.pushNamed(context, LoginScreen.id);
                             },
-                          )
+                          ),
                         ],
                       ),
                     )

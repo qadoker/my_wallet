@@ -11,23 +11,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  moor_flutter: ^3.1.0
+  cloud_firestore: ^1.0.0
+  firebase_auth: ^1.0.0
   cupertino_icons: ^1.0.0
+  moor_flutter: ^3.1.0
+  pie_chart: ^4.0.1
   provider: ^4.3.3
   unicorndial: ^1.1.5
-  pie_chart: ^4.0.1
-
-
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  moor_generator: ^3.4.1
   build_runner: ^1.11.1
 
+  moor_generator: ^3.4.1
 
 flutter:
   uses-material-design: true

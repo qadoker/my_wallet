@@ -11,22 +11,20 @@ import 'package:my_wallet/screens/primary/signup_screen.dart';
 import 'package:my_wallet/screens/secondary/main&menu.dart';
 import 'package:my_wallet/screens/secondary/menu.dart';
 
-void main() => runApp(
-    Provider<WalletDatabase>(
+void main() => runApp(Provider<WalletDatabase>(
       create: (context) => WalletDatabase(),
       child: MyWallet(),
       dispose: (context, db) => db.close(),
-    )
-);
+    ));
 
 class MyWallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData.dark().copyWith(
-          textSelectionColor: Color(0XFF009BFF).withOpacity(0.2),
-          textSelectionHandleColor: Color(0XFF009BFF),
-          scaffoldBackgroundColor: Colors.transparent,
+            textSelectionColor: Color(0XFF009BFF).withOpacity(0.2),
+            textSelectionHandleColor: Color(0XFF009BFF),
+            scaffoldBackgroundColor: Colors.transparent,
             primaryColor: Color(0XFF009BFF)),
         debugShowCheckedModeBanner: false,
         initialRoute: LoginScreen.id,

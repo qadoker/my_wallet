@@ -24,11 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
             image: DecorationImage(
                 image: AssetImage('assets/images/background.jpg'),
                 fit: BoxFit.fill)),
-        child: Stack(
-          fit: StackFit.expand,
+        child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              padding: EdgeInsets.only(left: screenWidth * 0.05, right: screenWidth*0.05, top: screenHeight * 0.2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -117,20 +116,21 @@ class _LoginScreenState extends State<LoginScreen> {
                           backgroundImage:
                               AssetImage('assets/pngs/facebook.png'),
                           radius: screenWidth * 0.07,
-                        )
+                        ),
                       ],
                     ),
                   )
                 ],
               ),
             ),
+            SizedBox(height: screenHeight*0.2),
             Align(
               alignment: Alignment.bottomRight,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Dont you have an account',
+                    "Don't you have an account? ",
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
