@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/secondary/main&menu.dart';
+import 'package:my_wallet/screens/secondary/drawing.dart';
 import 'package:my_wallet/screens/secondary/profile.dart';
 import 'package:my_wallet/screens/secondary/settings.dart';
 import 'package:my_wallet/widgets/secondary/menu_option.dart';

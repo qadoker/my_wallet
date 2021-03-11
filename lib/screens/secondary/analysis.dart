@@ -55,7 +55,7 @@ class _AnalysisState extends State<Analysis> {
                         stream: dao.watchAllOperations(),
                         builder: (context,
                             AsyncSnapshot<List<OperationWithCategory>> snapshot) {
-                          final operations = snapshot.data ?? List();
+                          final operations = snapshot.data ?? [];
                           double income = operations.map((operation) =>
                           operation.operation.income != null ? operation.operation.income : 0).fold(0, (p, income) => p + income);
                           double expense = operations.map((operation) =>

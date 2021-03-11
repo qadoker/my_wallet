@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_wallet/constants.dart';
-import 'package:my_wallet/screens/secondary/main&menu.dart';
-import 'package:my_wallet/screens/secondary/settings.dart';
+import 'package:my_wallet/screens/secondary/drawing.dart';
 import 'package:my_wallet/widgets/primary/wallet_dropdownbutton.dart';
-import 'package:provider/provider.dart';
 
 class InitialSetScreen extends StatefulWidget {
   static const String id = 'initial_settings_screen';
@@ -14,8 +12,8 @@ class InitialSetScreen extends StatefulWidget {
 
 class _InitialSetScreenState extends State<InitialSetScreen> {
   String currencyVal,
-      defaultCur = currency[0],
       languageVal,
+      defaultCur = currency[0],
       defaultLan = languages[0];
 
   double screenWidth, screenHeight;
@@ -43,19 +41,16 @@ class _InitialSetScreenState extends State<InitialSetScreen> {
           decoration: BoxDecoration(
               image: DecorationImage(
             image: AssetImage('assets/images/background2.jpg'),
-            // fit: BoxFit.fill
           )),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
-                  child: Text('My Wallet',
-                      style: TextStyle(
-                          fontFamily: 'Pacifico',
-                          fontSize: screenWidth * 0.13,
-                          color: Colors.white)),
-                ),
+                Text('My Wallet',
+                    style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        fontSize: screenWidth * 0.13,
+                        color: Colors.white)),
                 SizedBox(height: screenHeight * 0.03),
                 Container(
                     decoration: BoxDecoration(

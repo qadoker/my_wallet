@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,18 +28,19 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.05, right: screenWidth*0.05, top: screenHeight * 0.2),
+              padding: EdgeInsets.only(
+                  left: screenWidth * 0.05,
+                  right: screenWidth * 0.05,
+                  top: screenHeight * 0.2),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
-                    child: Text('My Wallet',
-                        style: TextStyle(
-                            fontFamily: 'Pacifico',
-                            fontSize: screenWidth * 0.13,
-                            color: Color(0XFF009BFF))),
-                  ),
+                  Text('My Wallet',
+                      style: TextStyle(
+                          fontFamily: 'Pacifico',
+                          fontSize: screenWidth * 0.13,
+                          color: Color(0XFF009BFF))),
                   SizedBox(height: screenHeight * 0.03),
                   WalletTextFormField(
                     hintText: 'Enter Your Email',
@@ -61,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   RoundedButton(onPressed: () {}, text: 'Log In'),
                   SizedBox(height: screenHeight * 0.02),
                   Padding(
-                    padding: EdgeInsets.only(right: screenWidth * 0.1),
+                    padding: EdgeInsets.only(left: screenWidth * 0.6),
                     child: GestureDetector(
                       child: Text('Forgot Password?',
                           style: TextStyle(color: Color(0XFF009BFF)),
@@ -123,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            SizedBox(height: screenHeight*0.2),
+            SizedBox(height: screenHeight * 0.2),
             Align(
               alignment: Alignment.bottomRight,
               child: Row(

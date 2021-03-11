@@ -17,22 +17,19 @@ class _DrawingState extends State<Drawing> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: [
-        MenuScreen(),
-        MainScreen(),
-      ],
+          children: [MenuScreen(), HomeScreen()],
     ));
   }
 }
 
-class MainScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   static const String id = 'main_screen';
 
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _MainScreenState extends State<MainScreen>
+class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   double screenWidth, screenHeight;
 
@@ -42,13 +39,12 @@ class _MainScreenState extends State<MainScreen>
   AnimationController _controller;
   Animation<double> _scaleanimation;
 
-  // Animation<Offset> _slideanimation;
 
   int _selectedIndex = 1;
 
   List<Widget> screens = [
     null,
-    Main(),
+    MainScreen(),
     Categories(),
     Analysis(),
   ];

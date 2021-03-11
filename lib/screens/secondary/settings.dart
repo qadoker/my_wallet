@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_wallet/constants.dart';
-import 'package:my_wallet/screens/primary/initial_settings.dart';
-import 'package:my_wallet/screens/secondary/main&menu.dart';
 import 'package:my_wallet/widgets/primary/wallet_dropdownbutton.dart';
-import 'package:provider/provider.dart';
 class Settings extends StatefulWidget {
   static const String id = 'settings_screen';
 

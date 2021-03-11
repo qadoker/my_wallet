@@ -4,12 +4,12 @@ import 'package:my_wallet/widgets/secondary/operation_view.dart';
 import 'package:my_wallet/widgets/secondary/price_amount.dart';
 import 'package:unicorndial/unicorndial.dart';
 
-class Main extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   @override
-  _MainState createState() => _MainState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainState extends State<Main> {
+class _MainScreenState extends State<MainScreen> {
   double screenWidth, screenHeight;
   bool _showDelete=false;
   String delButtonName(bool show){
@@ -93,13 +93,13 @@ class _MainState extends State<Main> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                color: Colors.white,
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black38,
                       blurRadius: 5.0,
                       offset: Offset(0, 5.0))
                 ],
-                color: Colors.white,
               ),
               child: Stack(
                 fit: StackFit.expand,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moor_flutter/moor_flutter.dart';
 import 'package:my_wallet/database/wallet_database.dart';
 import 'package:my_wallet/screens/secondary/add_operation.dart';
 import 'package:provider/provider.dart';
@@ -20,13 +19,6 @@ class _OperationViewState extends State<OperationView> {
   List<OperationWithCategory> operations = [];
 
 
-  //
-  // @override
-  // void initState() {
-  //   deleteOperationWithFunction();
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final dao =
@@ -36,7 +28,7 @@ class _OperationViewState extends State<OperationView> {
           stream: dao.watchAllOperations(),
           builder:
               (context, AsyncSnapshot<List<OperationWithCategory>> snapshot) {
-            operations = snapshot.data ?? List();
+            operations = snapshot.data ?? [];
             print(operations.length);
             if (snapshot.hasData) {
               print('==data==: ${snapshot.data}');
@@ -51,15 +43,6 @@ class _OperationViewState extends State<OperationView> {
                 },
                 itemBuilder: (context, index) {
                   final item = operations[index];
-                  // while (item.categorie.iconName == null) {
-                  //   dao.deleteOperation(item.operation);
-                  // }
-                  // if (item.categorie == null) {
-                  //   item.categorie.name = 'no name'
-                  //   );
-                  //   // dao.updateOperation(item.operation.copyWith(categoryName: category.name))
-                  //   dao.insertCategory(category);
-                  // }
 
                   return OperationTile(
                     onDeleteTap: () {
@@ -90,8 +73,6 @@ class _OperationViewState extends State<OperationView> {
                       });
                     },
                   );
-
-                  return SizedBox();
                 },
                 itemCount: operations.length,
               );

@@ -28,16 +28,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
-                  child: Text('My Wallet',
-                      style: TextStyle(
-                          fontFamily: 'Pacifico',
-                          fontSize: screenWidth * 0.13,
-                          color: Color(0XFF009BFF))),
-                ),
+                Text('My Wallet',
+                    style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        fontSize: screenWidth * 0.13,
+                        color: Color(0XFF009BFF))),
                 SizedBox(height: screenHeight * 0.03),
                 WalletTextFormField(
                   hintText: 'Enter Your Email',

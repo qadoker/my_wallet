@@ -40,10 +40,10 @@ class _AddCategoryState extends State<AddCategory> {
     screenHeight = size.height;
     screenWidth = size.width;
 
-    Color light_blue = Color(0XFF9DDEFF);
+    Color lightBlue = Color(0XFF9DDEFF);
     Color blue = Color(0XFF009BFF);
     return Scaffold(
-      backgroundColor: light_blue,
+      backgroundColor: lightBlue,
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Container(
@@ -101,7 +101,7 @@ class _AddCategoryState extends State<AddCategory> {
                     style: TextStyle(color: blue, fontSize: 20),
                     underline: SizedBox(),
                     // hint: ,
-                    dropdownColor: light_blue,
+                    dropdownColor: lightBlue,
                     items: categoryIcons
                         .map((Icon icon) =>
                         DropdownMenuItem<Icon>(
