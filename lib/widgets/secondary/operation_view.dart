@@ -3,7 +3,8 @@ import 'package:my_wallet/database/wallet_database.dart';
 import 'package:my_wallet/screens/secondary/add_operation.dart';
 import 'package:provider/provider.dart';
 import 'package:my_wallet/widgets/secondary/operation_tile.dart';
-import 'package:my_wallet/constants.dart';
+import 'package:my_wallet/providers/currency_provider.dart';
+
 
 class OperationView extends StatefulWidget {
   bool showOperationDeleteButton;
@@ -52,7 +53,7 @@ class _OperationViewState extends State<OperationView> {
                     icon: item.categorie !=null ? item.categorie.iconName : Icons.error.codePoint,
                     categoryName: item.categorie != null ? item.categorie.name : 'No name',
                     amount: item.operation.income ?? item.operation.expense,
-                    currency: currency[0],
+                    currency: Provider.of<Currencies>(context, listen: false).currency,
                     onTap: () {
                       setState(() {
                         showModalBottomSheet(

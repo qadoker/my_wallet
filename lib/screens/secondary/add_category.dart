@@ -4,6 +4,8 @@ import 'package:moor_flutter/moor_flutter.dart' as moor;
 import 'package:my_wallet/constants.dart';
 import 'package:my_wallet/database/wallet_database.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AddCategory extends StatefulWidget {
   bool isAddedCategory;
@@ -34,6 +36,7 @@ class _AddCategoryState extends State<AddCategory> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery
         .of(context)
         .size;
@@ -55,7 +58,7 @@ class _AddCategoryState extends State<AddCategory> {
                   .viewInsets
                   .bottom),
           child: Column(children: [
-          Text(widget.isAddedCategory==false ? 'Edit category' : 'Add category',
+          Text(widget.isAddedCategory==false ? appLang.edit_category : appLang.add_category,
             style: TextStyle(color: Color(0XFF009BFF),
               fontSize: 25.0,
               fontWeight: FontWeight.bold,),),
@@ -63,7 +66,7 @@ class _AddCategoryState extends State<AddCategory> {
           TextFormField(
               focusNode: FocusNode(canRequestFocus: false),
               decoration: InputDecoration(
-                  labelText: 'Enter name:',
+                  labelText: appLang.enter_name,
                   labelStyle: TextStyle(color: blue.withOpacity(0.8),),
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: blue)
@@ -91,7 +94,7 @@ class _AddCategoryState extends State<AddCategory> {
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Choose Icon: ', style: TextStyle(color: blue),),
+                Text(appLang.choose_icon, style: TextStyle(color: blue),),
                 SizedBox(width: screenWidth * 0.05),
                 Flexible(
                   child: DropdownButton<Icon>(
@@ -122,7 +125,7 @@ class _AddCategoryState extends State<AddCategory> {
                 SizedBox(height: screenHeight * 0.05),
                 TextButton(
                     child: Text(
-                        widget.isAddedCategory == false ? 'Edit' : 'Add',
+                        widget.isAddedCategory == false ? appLang.edit : appLang.add,
                         style: TextStyle(color: blue, fontSize: 20.0)),
                     onPressed: () {
                       setState(() {

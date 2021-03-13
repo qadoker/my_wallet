@@ -4,6 +4,8 @@ import 'package:my_wallet/screens/secondary/menu.dart';
 import 'package:my_wallet/screens/secondary/analysis.dart';
 import 'package:my_wallet/screens/secondary/categories.dart';
 import 'package:my_wallet/screens/secondary/main_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Drawing extends StatefulWidget {
   static const String id = 'drawer';
@@ -81,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -102,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen>
             elevation: 0,
             currentIndex: _selectedIndex,
             onTap: onItemTap,
-            items: const <BottomNavigationBarItem>[
+            items:  <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.menu),
                 label: 'Digər',
@@ -110,17 +113,17 @@ class _HomeScreenState extends State<HomeScreen>
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                label: 'Əsas',
+                label: appLang.home,
                 backgroundColor: Colors.transparent,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.category),
-                label: 'Kategoriyalar',
+                label: appLang.categories,
                 backgroundColor: Colors.transparent,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.analytics),
-                label: 'Analiz',
+                label: appLang.analysis,
                 backgroundColor: Colors.transparent,
               )
             ],

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/database/wallet_database.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Analysis extends StatefulWidget {
   @override
@@ -13,6 +15,7 @@ class _AnalysisState extends State<Analysis> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     final dao =
         Provider
             .of<WalletDatabase>(context, listen: false)
@@ -45,7 +48,7 @@ class _AnalysisState extends State<Analysis> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   Text(
-                  'Analysis',
+                  appLang.analysis,
                   style: TextStyle(
                     color: Color(0XFF009BFF),
                     fontSize: 20,
@@ -62,8 +65,8 @@ class _AnalysisState extends State<Analysis> {
                           operation.operation.expense != null ? operation.operation.expense : 0).fold(0, (p, e) => p + e);
                           if (snapshot.hasData) {
                             Map<String, double> walletMap = {
-                              'Income': income,
-                              'Expense': (-expense)
+                              appLang.income: income,
+                              appLang.expense: (-expense)
                             };
                             return PieChart(
                               dataMap: walletMap,

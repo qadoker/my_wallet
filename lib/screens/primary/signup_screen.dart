@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/widgets/primary/rounded_button.dart';
 import 'package:my_wallet/widgets/primary/wallet_textformfield.dart';
 import 'package:my_wallet/screens/primary/initial_settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   static const String id = 'signup_screen';
@@ -15,6 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenWidth = size.width;
     screenHeight = size.height;
@@ -31,14 +34,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('My Wallet',
+                Text(appLang.my_wallet,
                     style: TextStyle(
                         fontFamily: 'Pacifico',
                         fontSize: screenWidth * 0.13,
                         color: Color(0XFF009BFF))),
                 SizedBox(height: screenHeight * 0.03),
                 WalletTextFormField(
-                  hintText: 'Enter Your Email',
+                  hintText: appLang.enter_email,
                   obscureText: false,
                   prefixIcon: Icon(
                     Icons.email,
@@ -47,7 +50,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 WalletTextFormField(
-                  hintText: 'Enter Your Username',
+                  hintText: appLang.enter_username,
                   obscureText: false,
                   prefixIcon: Icon(
                     Icons.perm_identity,
@@ -56,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 WalletTextFormField(
-                  hintText: 'Enter password',
+                  hintText: appLang.enter_password,
                   obscureText: true,
                   prefixIcon: Icon(
                     Icons.vpn_key,
@@ -68,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.pushNamed(context, InitialSetScreen.id);
                     },
-                    text: 'Sign Up'),
+                    text: appLang.sign_up),
               ],
             ),
           )),

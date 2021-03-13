@@ -4,6 +4,8 @@ import 'package:my_wallet/screens/secondary/drawing.dart';
 import 'package:my_wallet/screens/secondary/profile.dart';
 import 'package:my_wallet/screens/secondary/settings.dart';
 import 'package:my_wallet/widgets/secondary/menu_option.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class MenuScreen extends StatefulWidget {
   static const String id = 'menu_screen';
@@ -18,6 +20,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -50,7 +53,7 @@ class _MenuScreenState extends State<MenuScreen> {
             SizedBox(height: screenHeight*0.03,),
             Text('Qadir Kerimov', style: TextStyle(color: Colors.white, fontSize: 18)),
             SizedBox(height: screenHeight*0.01,),
-            Text('Balans: 200', style: TextStyle(color: Colors.white, fontSize: 18)),
+            Text('${appLang.balance}: 200', style: TextStyle(color: Colors.white, fontSize: 18)),
             Divider(
               color: Colors.white.withOpacity(0.5),
               height: screenWidth*0.2,
@@ -59,21 +62,21 @@ class _MenuScreenState extends State<MenuScreen> {
 
             MenuOption(
               icon: Icons.home,
-              screenName: "Əsas",
+              screenName: appLang.home,
               pushScreen: () {
                 Navigator.pushNamed(context, Drawing.id);
               },
             ),
             MenuOption(
                 icon: Icons.settings,
-                screenName: 'Parametrlər',
+                screenName: appLang.settings,
               pushScreen: () {
                   Navigator.pushNamed(context, Settings.id);
               },
             ),
             MenuOption(
               icon: Icons.person_outline,
-              screenName: 'Profil',
+              screenName: appLang.profile,
               pushScreen: () {
                 Navigator.pushNamed(context, Profile.id);
               },

@@ -1,0 +1,41 @@
+{
+  "my_wallet" : "Pul Qabım",
+  "enter_email": "Emaili daxil edin",
+  "enter_password" : "Şifrəni daxil edin",
+  "log_in" : "Daxil olun",
+  "forgot_password": "Şifrəni unutmusuz?",
+  "or" : "VƏ YA",
+  "do_you_have_account" : "Hesabınız yoxdur? ",
+  "sign_up" : "Qeydiyyatdan keçin",
+  "enter_username" : "Adınızı daxil edin",
+
+  "choose_currency" : "Valyutanı seçin: ",
+  "choose_language" : "Dili seçin: ",
+
+  "home" : "Əsas",
+  "categories" : "Kategoriyalar",
+  "analysis" : "Analiz",
+  "settings" : "Parameterlər",
+  "profile" : "Profil",
+  "income" : "Gəlir",
+  "expense" : "Xərc",
+  "balance" : "Balans",
+  "operations" : "   Əməliyyatlar",
+
+  "add_operation" : "Əməliyyat əlavə edin",
+  "edit_operation" : "Əməliyyatı redaktə edin",
+  "choose_category" : "Kategoriya əlavə edin",
+  "enter_name" : "Adı daxil edin: ",
+  "enter_price" : "Qiyməti daxil edin: ",
+  "edit" : "Redaktə edin",
+  "add" : "Əlavə edin",
+  "add_category" : "Kategoriya əlavə edin",
+  "edit_category" : "Kategoriyanı redaktə edin",
+  "choose_icon" : "İkn seçin: ",
+  "delete_operation" : "Əməliyyatı silin",
+  "undelete_operation" : "Silməni kənarlaşdırın",
+  "delete_category" : "Kategoriyanı silin",
+  "undelete_category" : "Silməni kənarlaşdırın",
+
+  "log_out" : "Çıxın"
+}

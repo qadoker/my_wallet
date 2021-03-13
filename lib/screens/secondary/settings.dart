@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/constants.dart';
+import 'package:my_wallet/providers/locale_provider.dart';
 import 'package:my_wallet/widgets/primary/wallet_dropdownbutton.dart';
+import 'package:provider/provider.dart';
+import 'drawing.dart';
+import 'package:my_wallet/providers/currency_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_wallet/l10n/l10n.dart';
+
+
 class Settings extends StatefulWidget {
   static const String id = 'settings_screen';
 
@@ -10,10 +17,10 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+
   String currencyVal,
-      defaultCur = currency[0],
       languageVal,
-      defaultLan = languages[0];
+      defaultLan = L10n.languages[0];
 
   double screenWidth, screenHeight;
   Color blue = Color(0XFF009BFF);
@@ -21,6 +28,8 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
+    String defaultCur = Provider.of<Currencies>(context, listen: false).currency;
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -34,7 +43,15 @@ class _SettingsState extends State<Settings> {
         backgroundColor: Color(0XFF009BFF),
         focusColor: Color(0XFF9DDEFF),
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.pushNamed(context, Drawing.id);
+          Provider.of<Currencies>(context, listen: false).currency = currencyVal;
+          if(languageVal ==null ?? L10n.languages[0]){
+            Provider
+                .of<LocaleProvider>(context, listen: false).setLocale(Locale('az'));
+          }else if(languageVal == L10n.languages[1]){
+            Provider
+                .of<LocaleProvider>(context, listen: false).setLocale(Locale('en'));
+          }
         },
       ),
       body: Container(
@@ -50,7 +67,7 @@ class _SettingsState extends State<Settings> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Center(
-                  child: Text('My Wallet',
+                  child: Text(appLang.my_wallet,
                       style: TextStyle(
                           fontFamily: 'Pacifico',
                           fontSize: screenWidth * 0.13,
@@ -72,10 +89,10 @@ class _SettingsState extends State<Settings> {
                           dropdownTextColor: blue,
                           hintColor: blue,
                           textColor: blue,
-                          text: 'Valyutanı seçin: ',
+                          text: appLang.choose_currency,
                           defaultVal: defaultCur,
                           listVal: currencyVal,
-                          list: currency,
+                          list:   Provider.of<Currencies>(context, listen: false).currencies,
                           onChanged: (newValue) {
                             setState(() {
                               currencyVal = newValue;
@@ -88,10 +105,10 @@ class _SettingsState extends State<Settings> {
                           dropdownTextColor: blue,
                           hintColor: blue,
                           textColor: blue,
-                          text: 'Dili seçin: ',
+                          text: appLang.choose_language,
                           defaultVal: defaultLan,
                           listVal: languageVal,
-                          list: languages,
+                          list: L10n.languages,
                           onChanged: (newValue) {
                             setState(() {
                               languageVal = newValue;

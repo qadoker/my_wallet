@@ -1,0 +1,41 @@
+{
+  "my_wallet" : "My Wallet",
+  "enter_email": "Enter Your Email",
+  "enter_password" : "Enter Password",
+  "log_in" : "Log In",
+  "forgot_password": "Forgot Password",
+  "or" : "OR",
+  "do_you_have_account" : "Don't you have an account? ",
+  "sign_up" : "Sign Up",
+  "enter_username" : "Enter Your UserName",
+
+  "choose_currency" : "Choose currency: ",
+  "choose_language" : "Choose language: ",
+
+  "home" : "Home",
+  "categories" : "Categories",
+  "analysis" : "Analysis",
+  "settings" : "Settings",
+  "profile" : "Profile",
+  "income" : "Income",
+  "expense" : "Expense",
+  "balance" : "Balance",
+  "operations" : "   Operations",
+
+  "add_operation" : "Add operation",
+  "edit_operation" : "Edit operation",
+  "choose_category" : "Choose Category",
+  "enter_name" : "Enter name: ",
+  "enter_price" : "Enter price: ",
+  "edit" : "Edit",
+  "add" : "Add",
+  "add_category" : "Add Category",
+  "edit_category" : "Edit Category",
+  "choose_icon" : "Choose Icon: ",
+  "delete_operation" : "Delete Operation",
+  "undelete_operation" : "Undelete Operation",
+  "delete_category" : "Delete Category",
+  "undelete_category" : "Undelete Category",
+
+  "log_out" : "Log Out"
+}

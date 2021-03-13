@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/screens/secondary/add_category.dart';
 import 'package:my_wallet/widgets/secondary/category_view.dart';
 import 'package:unicorndial/unicorndial.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Categories extends StatefulWidget {
   @override
@@ -12,20 +14,22 @@ class _CategoriesState extends State<Categories> {
   double screenWidth, screenHeight;
 
   bool _showDelete=false;
-  String delButtonName(bool show){
-    if(show==false){
-      return 'Delete operation';
-    }else{
-      return 'Undelete operation';
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
     Color blue = Color(0XFF009BFF);
+    String delButtonName(bool show){
+      if(show==false){
+        return appLang.delete_category;
+      }else{
+        return appLang.undelete_category;
+      }
+    }
 
     return Scaffold(
       body: Column(
@@ -48,7 +52,7 @@ class _CategoriesState extends State<Categories> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Categories',
+                      appLang.categories,
                       style: TextStyle(
                         color: blue,
                         fontSize: 20,
@@ -74,7 +78,7 @@ class _CategoriesState extends State<Categories> {
         childButtons: [
           UnicornButton(
             hasLabel: true,
-            labelText: 'Add category',
+            labelText: appLang.add_category,
             currentButton: FloatingActionButton(
               heroTag: 'Add category',
               backgroundColor: Colors.blue,

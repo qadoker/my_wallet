@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 
-const List<String> currency = ['AZN', 'USD', 'TLR'];
-const List<String> languages = ['Azərbaycan dili', 'English'];
+
+
 const List<Icon> categoryIcons = [
   Icon(Icons.credit_card),
   Icon(Icons.add_shopping_cart),

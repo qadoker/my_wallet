@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/widgets/primary/rounded_button.dart';
 import 'package:my_wallet/widgets/primary/wallet_textformfield.dart';
 import 'package:my_wallet/screens/primary/signup_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -15,6 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
+
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -36,14 +39,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('My Wallet',
+                  Text(appLang.my_wallet,
                       style: TextStyle(
                           fontFamily: 'Pacifico',
                           fontSize: screenWidth * 0.13,
                           color: Color(0XFF009BFF))),
                   SizedBox(height: screenHeight * 0.03),
                   WalletTextFormField(
-                    hintText: 'Enter Your Email',
+                    hintText: appLang.enter_email,
                     obscureText: false,
                     prefixIcon: Icon(
                       Icons.email,
@@ -52,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   WalletTextFormField(
-                    hintText: 'Enter password',
+                    hintText: appLang.enter_password,
                     obscureText: true,
                     prefixIcon: Icon(
                       Icons.vpn_key,
@@ -60,12 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  RoundedButton(onPressed: () {}, text: 'Log In'),
+                  RoundedButton(onPressed: () {}, text: appLang.log_in),
                   SizedBox(height: screenHeight * 0.02),
                   Padding(
                     padding: EdgeInsets.only(left: screenWidth * 0.6),
                     child: GestureDetector(
-                      child: Text('Forgot Password?',
+                      child: Text(appLang.forgot_password,
                           style: TextStyle(color: Color(0XFF009BFF)),
                           textAlign: TextAlign.right),
                     ),
@@ -84,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Center(
                             child: Text(
-                          'OR',
+                          appLang.or,
                           style: TextStyle(color: Colors.black38),
                         )),
                         Container(
@@ -132,14 +135,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Don't you have an account? ",
+                    appLang.do_you_have_account,
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, SignUpScreen.id);
                     },
-                    child: Text('Sign Up',
+                    child: Text(appLang.sign_up,
                         style: TextStyle(
                             fontSize: 15,
                             color: Colors.white,

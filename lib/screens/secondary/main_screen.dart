@@ -3,6 +3,8 @@ import 'package:my_wallet/screens/secondary/add_operation.dart';
 import 'package:my_wallet/widgets/secondary/operation_view.dart';
 import 'package:my_wallet/widgets/secondary/price_amount.dart';
 import 'package:unicorndial/unicorndial.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class MainScreen extends StatefulWidget {
   @override
@@ -12,19 +14,21 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   double screenWidth, screenHeight;
   bool _showDelete=false;
-  String delButtonName(bool show){
-    if(show==false){
-      return 'Delete operation';
-    }else{
-      return 'Undelete operation';
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenWidth = size.width;
     screenHeight = size.height;
+    String delButtonName(bool show){
+      if(show==false){
+        return appLang.delete_operation;
+      }else{
+        return appLang.undelete_operation;
+      }
+    }
 
     return Scaffold(
       floatingActionButton: UnicornDialer(
@@ -36,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
         childButtons: [
           UnicornButton(
             hasLabel: true,
-            labelText: 'Add operation',
+            labelText: appLang.add_operation,
             currentButton: FloatingActionButton(
               heroTag: 'Add operation',
               backgroundColor: Colors.blue,
@@ -119,7 +123,7 @@ class _MainScreenState extends State<MainScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "   Əməliyyatlar",
+                        appLang.operations,
                         style: TextStyle(
                             color: Color(0XFF009BFF),
                             letterSpacing: 3.0,

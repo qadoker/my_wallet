@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_wallet/screens/primary/login_screen.dart';
 import 'package:my_wallet/widgets/primary/rounded_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Profile extends StatefulWidget {
   static const String id = 'profile_screen';
@@ -16,6 +18,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -45,7 +48,7 @@ class _ProfileState extends State<Profile> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Center(
-                  child: Text('My Wallet',
+                  child: Text(appLang.my_wallet,
                       style: TextStyle(
                           fontFamily: 'Pacifico',
                           fontSize: screenWidth * 0.13,
@@ -79,14 +82,14 @@ class _ProfileState extends State<Profile> {
                           SizedBox(
                             height: screenHeight * 0.01,
                           ),
-                          Text('Balans: 200',
+                          Text('${appLang.balance}: 200',
                               style: TextStyle(color: blue, fontSize: 18)),
                           Divider(
                             color: blue.withOpacity(0.5),
                             height: screenWidth * 0.2,
                           ),
                           RoundedButton(
-                            text: 'Log Out',
+                            text: appLang.log_out,
                             onPressed: () {
                               Navigator.pushNamed(context, LoginScreen.id);
                             },
