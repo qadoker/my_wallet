@@ -87,9 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .hasMatch(value)) {
                               return appLang.enter_valid_email;
                             }
-                            if (authenticationProvider.userEmail != value) {
-                              return appLang.email_is_wrong;
-                            }
                           },
                         ),
                         SizedBox(height: screenHeight * 0.02),
@@ -120,9 +117,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (value.length < 8) {
                               return appLang.password_symbols;
                             }
-                            if (value != authenticationProvider.userPassword) {
-                              return appLang.password_is_wrong;
-                            }
                           },
                         ),
                         SizedBox(height: screenHeight * 0.02),
@@ -136,13 +130,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 final isSuccess =
                                     await authenticationProvider.signIn();
                                 if (isSuccess) {
-                                  Navigator.pushNamed(context, Drawing.id);
+                                  Navigator.popAndPushNamed(
+                                      context, Drawing.id);
                                   currencyProvider.currency =
                                       currencyProvider.currencies[0];
-                                } else {
-                                  final message =
-                                      'An error occurred, please check your credentials!';
+                                }else{
+                                  final message = 'An error occurred, please check your credentials!';
 
+                                  print(message);
                                 }
                               }
                             },
@@ -191,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               context,
                                               listen: false);
                                       googleProvider.login().whenComplete(() =>
-                                          Navigator.pushNamed(
+                                          Navigator.popAndPushNamed(
                                               context, InitialSetScreen.id));
                                     },
                                   )),
@@ -209,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               context,
                                               listen: false);
                                       facebookProvider.login().whenComplete(
-                                          () => Navigator.pushNamed(
+                                          () => Navigator.popAndPushNamed(
                                               context, InitialSetScreen.id));
                                     },
                                   )),

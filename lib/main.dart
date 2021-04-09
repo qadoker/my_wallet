@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_wallet/firebase/firebase_providers/categories_provider.dart';
@@ -26,6 +27,8 @@ void main() async {
 }
 
 class MyWallet extends StatelessWidget {
+  User user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -60,7 +63,7 @@ class MyWallet extends StatelessWidget {
                   scaffoldBackgroundColor: Colors.transparent,
                   primaryColor: Color(0XFF009BFF)),
               debugShowCheckedModeBanner: false,
-              initialRoute: LoginScreen.id,
+              initialRoute: user ==null ? LoginScreen.id : Drawing.id,
               routes: {
                 LoginScreen.id: (context) => LoginScreen(),
                 SignUpScreen.id: (context) => SignUpScreen(),

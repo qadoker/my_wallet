@@ -50,8 +50,8 @@ class _AddOperationState extends State<AddOperation> {
   Widget build(BuildContext context) {
     final categoryProvider =
         Provider.of<CategoryProvider>(context, listen: false);
-    Category defaultCategory = categoryProvider.categories.first;
     var appLang = AppLocalizations.of(context);
+    Category defaultCategory = categoryProvider.categories.first;
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -134,17 +134,7 @@ class _AddOperationState extends State<AddOperation> {
                               if (snapshot.hasError) {
                                 return Center(child: Text('Error'));
                               } else {
-                                if(snapshot.data.size == 0){
-                                  Category category1 = Category(
-                                      name: appLang.salary,
-                                      iconValue: Icons.credit_card.codePoint);
-                                  Category category2 = Category(
-                                      name: appLang.store,
-                                      iconValue:
-                                      Icons.add_shopping_cart.codePoint);
-                                  categoryProvider.addCategory(category1);
-                                  categoryProvider.addCategory(category2);
-                                }
+
 
                                 List<Category> categoriesList =
                                     categoryProvider.categories;

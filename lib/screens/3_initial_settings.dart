@@ -50,7 +50,7 @@ class _InitialSetScreenState extends State<InitialSetScreen> {
         backgroundColor: Color(0XFF009BFF),
         focusColor: Color(0XFF9DDEFF),
         onPressed: () {
-          Navigator.pushNamed(context, Drawing.id);
+          Navigator.popAndPushNamed(context, Drawing.id);
           if(languageVal == L10n.languages[0]){
             localeProvider.setLocale(Locale('az'));
           }else if(languageVal == L10n.languages[1]){

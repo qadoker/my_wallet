@@ -72,12 +72,12 @@ class _ProfileState extends State<Profile> {
                           CircleAvatar(
                             backgroundColor: Colors.lightBlue,
                             radius: screenWidth * 0.1,
-                            child: Icon(Icons.person, size: 50,) ?? Image.network(user.photoURL)
+                            child: Icon(Icons.person, size: 50,)
                           ),
                           SizedBox(
                             height: screenHeight * 0.03,
                           ),
-                          Text(user.displayName,
+                          Text(user.email,
                               style: TextStyle(color: blue, fontSize: 18)),
                           SizedBox(
                             height: screenHeight * 0.01,
@@ -90,7 +90,7 @@ class _ProfileState extends State<Profile> {
                             text: appLang.log_out,
                             onPressed: () {
                               FirebaseAuth.instance.signOut();
-                              Navigator.pushNamed(context, LoginScreen.id);
+                              Navigator.popAndPushNamed(context, LoginScreen.id);
                             },
                           ),
                         ],

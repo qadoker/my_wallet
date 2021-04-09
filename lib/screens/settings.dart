@@ -28,7 +28,8 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     var appLang = AppLocalizations.of(context);
-    String defaultCur = Provider.of<Currencies>(context, listen: false).currency;
+    final currencyProvider = Provider.of<Currencies>(context, listen: false);
+    String defaultCur = currencyProvider.currency ?? currencyProvider.currencies.first;
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -42,7 +43,7 @@ class _SettingsState extends State<Settings> {
         backgroundColor: Color(0XFF009BFF),
         focusColor: Color(0XFF9DDEFF),
         onPressed: () {
-          if(currencyVal != null){Provider.of<Currencies>(context, listen: false).currency = currencyVal;}
+          if(currencyVal != null ){currencyProvider.currency = currencyVal;}
           if(languageVal ==null ?? L10n.languages[0]){
             Provider
                 .of<LocaleProvider>(context, listen: false).setLocale(Locale('az'));

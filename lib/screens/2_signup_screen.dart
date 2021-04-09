@@ -164,7 +164,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           final isSuccess =
                               await authenticationProvider.signUp();
                           if (isSuccess) {
-                            Navigator.pushNamed(context, InitialSetScreen.id);
+                            Navigator.popAndPushNamed(context, InitialSetScreen.id);
                           } else {
                             final message =
                                 'An error occurred, please check your credentials!';

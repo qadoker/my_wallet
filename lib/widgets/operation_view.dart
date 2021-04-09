@@ -59,7 +59,7 @@ class _OperationViewState extends State<OperationView> {
                         icon: item.categoryIconVal !=null ? item.categoryIconVal : Icons.error.codePoint,
                         categoryName: item.categoryName != null ? item.categoryName : 'No name',
                         amount: double.parse(item.price),
-                        currency: Provider.of<Currencies>(context, listen: false).currency,
+                        currency: Provider.of<Currencies>(context, listen: false).currency ?? 'AZN',
                         onTap: () {
                           setState(() {
                             showModalBottomSheet(

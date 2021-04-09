@@ -11,7 +11,7 @@ class PriceAmount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appLang = AppLocalizations.of(context);
-    String currency = Provider.of<Currencies>(context, listen: false).currency;
+    String currency = Provider.of<Currencies>(context, listen: false).currency ?? 'AZN';
 
     return StreamBuilder<List<Operation>>(
         stream: OperationFDB.readOperations(),
