@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/providers/locale_provider.dart';
-import 'package:my_wallet/widgets/primary/wallet_dropdownbutton.dart';
+import 'package:my_wallet/app_providers/currency_provider.dart';
+import 'package:my_wallet/app_providers/locale_provider.dart';
+import 'package:my_wallet/widgets/wallet_dropdownbutton.dart';
 import 'package:provider/provider.dart';
 import 'drawing.dart';
-import 'package:my_wallet/providers/currency_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_wallet/l10n/l10n.dart';
 
@@ -43,8 +42,7 @@ class _SettingsState extends State<Settings> {
         backgroundColor: Color(0XFF009BFF),
         focusColor: Color(0XFF9DDEFF),
         onPressed: () {
-          Navigator.pushNamed(context, Drawing.id);
-          Provider.of<Currencies>(context, listen: false).currency = currencyVal;
+          if(currencyVal != null){Provider.of<Currencies>(context, listen: false).currency = currencyVal;}
           if(languageVal ==null ?? L10n.languages[0]){
             Provider
                 .of<LocaleProvider>(context, listen: false).setLocale(Locale('az'));
@@ -52,6 +50,7 @@ class _SettingsState extends State<Settings> {
             Provider
                 .of<LocaleProvider>(context, listen: false).setLocale(Locale('en'));
           }
+          Navigator.popAndPushNamed(context, Drawing.id);
         },
       ),
       body: Container(

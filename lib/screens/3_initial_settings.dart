@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_wallet/app_providers/currency_provider.dart';
+import 'package:my_wallet/app_providers/locale_provider.dart';
+import 'package:my_wallet/firebase/firebase_providers/categories_provider.dart';
+import 'package:my_wallet/firebase/models/category.dart';
 import 'package:my_wallet/l10n/l10n.dart';
-import 'package:my_wallet/providers/locale_provider.dart';
-import 'package:my_wallet/screens/secondary/drawing.dart';
-import 'package:my_wallet/widgets/primary/wallet_dropdownbutton.dart';
+import 'package:my_wallet/widgets/wallet_dropdownbutton.dart';
 import 'package:provider/provider.dart';
-import 'package:my_wallet/providers/currency_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'drawing.dart';
 
 class InitialSetScreen extends StatefulWidget {
   static const String id = 'initial_settings_screen';
@@ -24,12 +27,13 @@ class _InitialSetScreenState extends State<InitialSetScreen> {
   @override
   Widget build(BuildContext context) {
     var appLang = AppLocalizations.of(context);
+    final currencyProvider = Provider.of<Currencies>(context, listen: false);
+    final localeProvider = Provider.of<LocaleProvider>(context, listen: false);
+    final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
     String defaultCur =
-        Provider
-            .of<Currencies>(context, listen: false)
+        currencyProvider
             .currency;
-    defaultCur = Provider
-        .of<Currencies>(context, listen: false)
+    defaultCur = currencyProvider
         .currencies[0];
 
     Size size = MediaQuery
@@ -49,23 +53,20 @@ class _InitialSetScreenState extends State<InitialSetScreen> {
         onPressed: () {
           Navigator.pushNamed(context, Drawing.id);
           if(languageVal == L10n.languages[0]){
-            Provider
-                .of<LocaleProvider>(context, listen:  false).setLocale(Locale('az'));
+            localeProvider.setLocale(Locale('az'));
           }else if(languageVal == L10n.languages[1]){
-            Provider
-                .of<LocaleProvider>(context, listen: false).setLocale(Locale('en'));
+            localeProvider.setLocale(Locale('en'));
           }
           if (currencyVal != null) {
-            Provider
-                .of<Currencies>(context, listen: false)
+            currencyProvider
                 .currency =
                 currencyVal;
           } else {
-            Provider
-                .of<Currencies>(context, listen: false)
+            currencyProvider
                 .currency =
                 defaultCur;
           }
+
         },
       ),
       body: Container(

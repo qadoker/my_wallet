@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TextCard extends StatelessWidget {
+class AmountText extends StatelessWidget {
   final String text;
   final String amountText;
-  TextCard({this.text, this.amountText});
+  AmountText({this.text, this.amountText});
 
 
   @override

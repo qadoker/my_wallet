@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/secondary/add_category.dart';
-import 'package:my_wallet/widgets/secondary/category_view.dart';
+import 'package:my_wallet/widgets/category_view.dart';
 import 'package:unicorndial/unicorndial.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'add_category.dart';
 
 
 class Categories extends StatefulWidget {

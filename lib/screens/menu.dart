@@ -1,10 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/secondary/drawing.dart';
-import 'package:my_wallet/screens/secondary/profile.dart';
-import 'package:my_wallet/screens/secondary/settings.dart';
-import 'package:my_wallet/widgets/secondary/menu_option.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_wallet/app_providers/email_sign_in_provider.dart';
+import 'package:my_wallet/screens/profile.dart';
+import 'package:my_wallet/screens/settings.dart';
+import 'package:my_wallet/widgets/menu_option.dart';
+import 'package:provider/provider.dart';
+
+import 'drawing.dart';
 
 
 class MenuScreen extends StatefulWidget {
@@ -16,10 +20,12 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   double screenWidth, screenHeight;
+  User user = FirebaseAuth.instance.currentUser;
 
 
   @override
   Widget build(BuildContext context) {
+    final emailSignInProvider = Provider.of<EmailSignInProvider>(context, listen: false);
     var appLang = AppLocalizations.of(context);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
@@ -47,13 +53,11 @@ class _MenuScreenState extends State<MenuScreen> {
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: screenWidth*0.1,
-                child: Icon(Icons.person, size: 50,),
+                child: Icon(Icons.person, size: 50,)
               )
             ),
             SizedBox(height: screenHeight*0.03,),
-            Text('Qadir Kerimov', style: TextStyle(color: Colors.white, fontSize: 18)),
             SizedBox(height: screenHeight*0.01,),
-            Text('${appLang.balance}: 200', style: TextStyle(color: Colors.white, fontSize: 18)),
             Divider(
               color: Colors.white.withOpacity(0.5),
               height: screenWidth*0.2,

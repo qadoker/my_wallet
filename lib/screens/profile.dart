@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/primary/login_screen.dart';
-import 'package:my_wallet/widgets/primary/rounded_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_wallet/widgets/rounded_button.dart';
+
+import '1 _login_screen.dart';
 
 
 class Profile extends StatefulWidget {
@@ -15,6 +17,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   double screenWidth, screenHeight;
   Color blue = Color(0XFF009BFF);
+  User user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -69,21 +72,16 @@ class _ProfileState extends State<Profile> {
                           CircleAvatar(
                             backgroundColor: Colors.lightBlue,
                             radius: screenWidth * 0.1,
-                            child: Icon(
-                              Icons.person,
-                              size: 50,
-                            ),
+                            child: Icon(Icons.person, size: 50,) ?? Image.network(user.photoURL)
                           ),
                           SizedBox(
                             height: screenHeight * 0.03,
                           ),
-                          Text('Qadir Kerimov',
+                          Text(user.displayName,
                               style: TextStyle(color: blue, fontSize: 18)),
                           SizedBox(
                             height: screenHeight * 0.01,
                           ),
-                          Text('${appLang.balance}: 200',
-                              style: TextStyle(color: blue, fontSize: 18)),
                           Divider(
                             color: blue.withOpacity(0.5),
                             height: screenWidth * 0.2,
@@ -91,6 +89,7 @@ class _ProfileState extends State<Profile> {
                           RoundedButton(
                             text: appLang.log_out,
                             onPressed: () {
+                              FirebaseAuth.instance.signOut();
                               Navigator.pushNamed(context, LoginScreen.id);
                             },
                           ),

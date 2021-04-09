@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/secondary/add_operation.dart';
-import 'package:my_wallet/widgets/secondary/operation_view.dart';
-import 'package:my_wallet/widgets/secondary/price_amount.dart';
+import 'package:my_wallet/widgets/operation_view.dart';
+import 'package:my_wallet/widgets/price_amount.dart';
 import 'package:unicorndial/unicorndial.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'add_operation.dart';
 
 
 class MainScreen extends StatefulWidget {

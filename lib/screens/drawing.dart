@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_wallet/screens/secondary/menu.dart';
-import 'package:my_wallet/screens/secondary/analysis.dart';
-import 'package:my_wallet/screens/secondary/categories.dart';
-import 'package:my_wallet/screens/secondary/main_screen.dart';
+import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/menu.dart';
+import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/analysis.dart';
+import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/categories.dart';
+import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/main_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
