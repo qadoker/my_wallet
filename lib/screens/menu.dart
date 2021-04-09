@@ -2,11 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_wallet/app_providers/email_sign_in_provider.dart';
 import 'package:my_wallet/screens/profile.dart';
 import 'package:my_wallet/screens/settings.dart';
 import 'package:my_wallet/widgets/menu_option.dart';
 import 'package:provider/provider.dart';
+import 'package:my_wallet/firebase/firebase_providers/email_sign_in_provider.dart';
 
 import 'drawing.dart';
 

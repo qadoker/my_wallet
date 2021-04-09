@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/menu.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/analysis.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/categories.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/main_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'analysis.dart';
+import 'categories.dart';
+import 'main_screen.dart';
+import 'menu.dart';
 
 
 class Drawing extends StatefulWidget {

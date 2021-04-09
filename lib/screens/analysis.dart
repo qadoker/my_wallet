@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/firebase/firestore/operation_fdb.dart';
 import 'package:my_wallet/firebase/models/operation.dart';
 import 'package:pie_chart/pie_chart.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 

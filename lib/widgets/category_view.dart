@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/firebase/firebase_providers/categories_provider.dart';
 import 'package:my_wallet/firebase/firestore/category_fdb.dart';
 import 'package:my_wallet/firebase/models/category.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/add_category.dart';
+import 'package:my_wallet/screens/add_category.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_wallet/app_providers/email_sign_in_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_wallet/firebase/firebase_providers/email_sign_in_provider.dart';
 import 'package:my_wallet/widgets/rounded_button.dart';
 import 'package:my_wallet/widgets/wallet_textformfield.dart';
 import 'package:provider/provider.dart';

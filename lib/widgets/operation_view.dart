@@ -3,7 +3,7 @@ import 'package:my_wallet/app_providers/currency_provider.dart';
 import 'package:my_wallet/firebase/firebase_providers/operations_provider.dart';
 import 'package:my_wallet/firebase/firestore/operation_fdb.dart';
 import 'package:my_wallet/firebase/models/operation.dart';
-import 'file:///D:/My%20lessons/Development/Flutter%20with%20Dart/proyektlerim/my_wallet/lib/screens/add_operation.dart';
+import 'package:my_wallet/screens/add_operation.dart';
 import 'package:provider/provider.dart';
 
 import 'operation_tile.dart';

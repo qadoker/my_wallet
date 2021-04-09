@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_wallet/app_providers/currency_provider.dart';
 import 'package:my_wallet/app_providers/locale_provider.dart';
 import 'package:my_wallet/firebase/firebase_providers/categories_provider.dart';
-import 'package:my_wallet/firebase/models/category.dart';
 import 'package:my_wallet/l10n/l10n.dart';
 import 'package:my_wallet/widgets/wallet_dropdownbutton.dart';
 import 'package:provider/provider.dart';
