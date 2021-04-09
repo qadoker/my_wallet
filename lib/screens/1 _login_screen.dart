@@ -142,6 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 } else {
                                   final message =
                                       'An error occurred, please check your credentials!';
+
                                 }
                               }
                             },
